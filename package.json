@@ -1,0 +1,75 @@
+{
+  "name": "@solder-labs/charts",
+  "version": "0.0.1",
+  "description": "Unstyled-first, easily stylable Svelte 5 components around Apache ECharts, with a sensible default theme.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "svelte-package -i src/lib -o dist && publint",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "echarts": "^5.5.0 || ^6.0.0",
+    "svelte": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solder-labs/solder-charts.git"
+  },
+  "keywords": [
+    "svelte",
+    "echarts",
+    "charts",
+    "headless",
+    "bits-ui"
+  ],
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.7",
+    "@storybook/addon-docs": "^10.6.7",
+    "@storybook/addon-svelte-csf": "^5.1.6",
+    "@storybook/svelte-vite": "^10.6.7",
+    "@sveltejs/package": "^3.0.2",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "echarts": "^6.1.0",
+    "publint": "^0.3.25",
+    "storybook": "^10.6.7",
+    "svelte": "^5.57.3",
+    "svelte-check": "^4.7.8",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.8"
+  },
+  "homepage": "https://solder-labs.github.io/solder-charts/",
+  "bugs": {
+    "url": "https://github.com/Solder-labs/solder-charts/issues"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Guide/Theming" />
+
+# Theming
+
+Everything is a CSS custom property. Override on `:root`, or on any ancestor of a chart to theme a subtree:
+
+```css
+.my-dashboard {
+  --chart-color-1: #f43f5e;
+  --chart-grid: #f4f4f5;
+  --chart-radius: 4px;
+}
+```
+
+Parts expose `data-*` attributes (`data-chart-root`, `data-chart-title`, `data-stat-value`, `data-trend`, …) and
+accept `class`, so Tailwind or plain CSS work. Default styles use `:where()` (zero specificity) — your rules always win.
+Skip `@solder-labs/charts/styles.css` entirely to start from nothing.
