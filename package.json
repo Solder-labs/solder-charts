@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Unstyled-first, easily stylable Svelte 5 components around Apache ECharts, with a sensible default theme.",
   "license": "MIT",
+  "author": "Thijmen Rierink",
   "type": "module",
   "sideEffects": [
     "**/*.css"
